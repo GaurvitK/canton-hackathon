@@ -1,14 +1,14 @@
-# Canton Hackathon
+# Cantor8 Hackathon
 
-This repo contains a minimal Python client for the Canton DevNet hackathon: **Touching the Ledger: A Canton Low-Level Lab**.
+This repo contains a minimal Python client for the Cantor8 DevNet hackathon: **Touching the Ledger: A Cantor8 Low-Level Lab**.
 
-The goal is to interact with Canton through low-level Validator Admin and Ledger APIs. The scripts cover party onboarding, TransferPreapproval setup, ACS/balance checks, and Token Standard transfers.
+The goal is to interact with Cantor8 through low-level Validator Admin and Ledger APIs. The scripts cover party onboarding, TransferPreapproval setup, ACS/balance checks, and Token Standard transfers.
 
 party_id: gk-hack::12209b05ec39f438fd7f439ee0b2cf277aad500c2a2a6c87c8cc402e990d1b7e1c66
 
 ## What this does
 
-1. Create a new Canton party using the Validator Admin API topology flow.
+1. Create a new Cantor8 party using the Validator Admin API topology flow.
 2. Store the generated party key and PartyId locally.
 3. Create a `TransferPreapprovalProposal` contract through Ledger API interactive submission.
 4. Query the Active Contract Set using the Token Standard `Holding` interface.
@@ -25,14 +25,14 @@ party_id: gk-hack::12209b05ec39f438fd7f439ee0b2cf277aad500c2a2a6c87c8cc402e990d1
 ├── check_balance.py
 ├── send_cc.py
 ├── .env
-└── .canton/
+└── .cantor8/
     ├── party.json
     └── party-key.json
 ```
 
 `common.py` contains shared API, signing, and ACS helpers.
 
-The `.canton/` directory is generated locally and should not be committed. It contains the party key and PartyId.
+The `.cantor8/` directory is generated locally and should not be committed. It contains the party key and PartyId.
 
 ## Setup
 
@@ -45,8 +45,8 @@ pip install requests cryptography python-dotenv
 Create a `.env` file:
 
 ```env
-CANTON_CLIENT_ID=<client-id>
-CANTON_CLIENT_SECRET=<client-secret>
+CANTOR_CLIENT_ID=<client-id>
+CANTOR_CLIENT_SECRET=<client-secret>
 PARTY_HINT=<party-hint>
 
 AUTH_URL=https://auth.dev.digik.cantor8.tech/realms/master/protocol/openid-connect/token
@@ -58,7 +58,7 @@ Make sure `.gitignore` contains:
 
 ```gitignore
 .env
-.canton/
+.cantor8/
 __pycache__/
 ```
 
@@ -80,8 +80,8 @@ This creates a new Ed25519 keypair, registers the party using:
 It saves:
 
 ```text
-.canton/party-key.json
-.canton/party.json
+.cantor8/party-key.json
+.cantor8/party.json
 ```
 
 ### 2. Create TransferPreapproval

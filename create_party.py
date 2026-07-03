@@ -6,7 +6,7 @@ def main():
 
     if KEY_FILE.exists() or PARTY_FILE.exists():
         raise SystemExit(
-            "Key/party already exists in .canton/. "
+            "Key/party already exists in .cantor8/. "
             "Delete it only if you want a fresh party."
         )
 

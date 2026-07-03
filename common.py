@@ -20,7 +20,7 @@ CLIENT_ID = os.getenv("CANTON_CLIENT_ID", "hackathon")
 CLIENT_SECRET = os.getenv("CANTON_CLIENT_SECRET")
 PARTY_HINT = os.getenv("PARTY_HINT", "gk-hack")
 
-CANTON_DIR = Path(".canton")
+CANTON_DIR = Path(".cantor8")
 KEY_FILE = CANTON_DIR / "party-key.json"
 PARTY_FILE = CANTON_DIR / "party.json"
 
