@@ -4,6 +4,8 @@ This repo contains a minimal Python client for the Canton DevNet hackathon: **To
 
 The goal is to interact with Canton through low-level Validator Admin and Ledger APIs. The scripts cover party onboarding, TransferPreapproval setup, ACS/balance checks, and Token Standard transfers.
 
+party_id: gk-hack::12209b05ec39f438fd7f439ee0b2cf277aad500c2a2a6c87c8cc402e990d1b7e1c66
+
 ## What this does
 
 1. Create a new Canton party using the Validator Admin API topology flow.
