@@ -18,10 +18,10 @@ The goal is to interact with Canton through low-level Validator Admin and Ledger
 ```text
 .
 ├── common.py
-├── 01_create_party.py
-├── 02_create_preapproval.py
-├── 03_check_balance.py
-├── 04_send_cc.py
+├── create_party.py
+├── create_preapproval.py
+├── check_balance.py
+├── send_cc.py
 ├── .env
 └── .canton/
     ├── party.json
@@ -65,7 +65,7 @@ __pycache__/
 ### 1. Create a party
 
 ```bash
-python 01_create_party.py
+python create_party.py
 ```
 
 This creates a new Ed25519 keypair, registers the party using:
@@ -85,7 +85,7 @@ It saves:
 ### 2. Create TransferPreapproval
 
 ```bash
-python 02_create_preapproval.py
+python create_preapproval.py
 ```
 
 This creates a `TransferPreapprovalProposal` contract for the party. This step is required before the party can receive CC.
@@ -93,7 +93,7 @@ This creates a `TransferPreapprovalProposal` contract for the party. This step i
 ### 3. Check balance
 
 ```bash
-python 03_check_balance.py
+python check_balance.py
 ```
 
 This shows one or more Holding contracts and CC balance.
@@ -101,7 +101,7 @@ This shows one or more Holding contracts and CC balance.
 ### 4. Send CC to another party
 
 ```bash
-python 04_send_cc.py \
+python send_cc.py \
   --receiver "<receiver_party_id>" \
   --amount "10.0000000000"
 ```
@@ -109,5 +109,5 @@ python 04_send_cc.py \
 After the transfer, check balance again:
 
 ```bash
-python 03_check_balance.py
+python check_balance.py
 ```
